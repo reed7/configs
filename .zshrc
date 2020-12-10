@@ -4,11 +4,13 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/wei.zhong/.oh-my-zsh"
 
-DEFAULT_USER=wei.zhong
-POWERLEVEL9K_ALWAYS_SHOW_USER=true
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(host dir vcs newline)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs load time)
-POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_last
 
+# HOST color scheme
+POWERLEVEL9K_HOST_LOCAL_BACKGROUND=023
+
+# DIR color scheme
 POWERLEVEL9K_COLOR_SCHEME=dark
 POWERLEVEL9K_DIR_DEFAULT_BACKGROUND=110
 POWERLEVEL9K_DIR_HOME_BACKGROUND=062
@@ -17,6 +19,7 @@ POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=179
 POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=131
 POWERLEVEL9K_VCS_CLEAN_BACKGROUND=028
 
+# LOAD color scheme
 # Segment in black and white
 POWERLEVEL9K_LOAD_CRITICAL_BACKGROUND="black"
 POWERLEVEL9K_LOAD_CRITICAL_FOREGROUND="white"
@@ -41,42 +44,6 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
