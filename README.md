@@ -4,7 +4,7 @@ The repository for my config files
 
 ## .zshrc
 
-Requires powerlevel9k theme
+Requires Oh-My-Zsh and powerlevel9k theme
 
 ## .vimrc
 
