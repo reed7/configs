@@ -92,6 +92,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias work="cd ~/git/snc/master"
 
-source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
-
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
