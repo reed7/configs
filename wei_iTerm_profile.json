@@ -510,7 +510,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.7607843279838562
   },
-  "Normal Font" : "Monaco 14",
+  "Normal Font" : "Menlo-Regular 14",
   "Unlimited Scrollback" : false,
   "Ansi 12 Color (Light)" : {
     "Red Component" : 0.65349078178405762,
