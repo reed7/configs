@@ -8,9 +8,7 @@ export ZSH="/Users/wei.zhong/.oh-my-zsh"
 
 export PATH="/Users/wei.zhong/.local/bin:$PATH"
 
-#export NEXUS_USERNAME=REDACTED
-#export NEXUS_PASSWORD=REDACTED
-
+# Replace with the credentials used to access the git repo
 export NEXUS_USERNAME=xxxxx
 export NEXUS_PASSWORD=xxxxx
 
@@ -44,12 +42,6 @@ export JAVA_HOME=/opt/homebrew/opt/openjdk@21
 export ZSH="/Users/wei.zhong/.oh-my-zsh"
 
 export PATH="/Users/wei.zhong/.local/bin:$PATH"
-
-#export NEXUS_USERNAME=REDACTED
-#export NEXUS_PASSWORD=REDACTED
-
-export NEXUS_USERNAME=wei.zhong
-export NEXUS_PASSWORD=REDACTED
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
