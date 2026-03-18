@@ -1,43 +1,61 @@
+export PATH="/usr/local/bin:$PATH"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export JAVA_HOME=/opt/homebrew/opt/openjdk@21
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/wei.zhong/.oh-my-zsh"
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(host dir vcs newline)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs load time)
+export PATH="/Users/wei.zhong/.local/bin:$PATH"
 
-# HOST color scheme
-POWERLEVEL9K_HOST_LOCAL_BACKGROUND=023
+#export NEXUS_USERNAME=REDACTED
+#export NEXUS_PASSWORD=REDACTED
 
-# DIR color scheme
-POWERLEVEL9K_COLOR_SCHEME=dark
-POWERLEVEL9K_DIR_DEFAULT_BACKGROUND=110
-POWERLEVEL9K_DIR_HOME_BACKGROUND=062
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND=067
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=179
-POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=131
-POWERLEVEL9K_VCS_CLEAN_BACKGROUND=028
-
-# LOAD color scheme
-# Segment in black and white
-POWERLEVEL9K_LOAD_CRITICAL_BACKGROUND="black"
-POWERLEVEL9K_LOAD_CRITICAL_FOREGROUND="white"
-POWERLEVEL9K_LOAD_WARNING_BACKGROUND="black"
-POWERLEVEL9K_LOAD_WARNING_FOREGROUND="white"
-POWERLEVEL9K_LOAD_NORMAL_BACKGROUND="black"
-POWERLEVEL9K_LOAD_NORMAL_FOREGROUND="white"
-# Colorize only the visual identifier
-POWERLEVEL9K_LOAD_CRITICAL_VISUAL_IDENTIFIER_COLOR="red"
-POWERLEVEL9K_LOAD_WARNING_VISUAL_IDENTIFIER_COLOR="yellow"
-POWERLEVEL9K_LOAD_NORMAL_VISUAL_IDENTIFIER_COLOR="green"
+export NEXUS_USERNAME=wei.zhong
+export NEXUS_PASSWORD=REDACTED
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="muse"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+export PATH="/usr/local/bin:$PATH"
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export JAVA_HOME=/opt/homebrew/opt/openjdk@21
+
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/wei.zhong/.oh-my-zsh"
+
+export PATH="/Users/wei.zhong/.local/bin:$PATH"
+
+#export NEXUS_USERNAME=REDACTED
+#export NEXUS_PASSWORD=REDACTED
+
+export NEXUS_USERNAME=wei.zhong
+export NEXUS_PASSWORD=REDACTED
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="muse"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -60,36 +78,47 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
+"~/.zshrc" 115L, 4064B
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias work="cd ~/git/snc/master"
+alias work="cd ~/Projects"
+alias nproc="sysctl -n hw.ncpu"
 
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+eval "$(rbenv init -)"
+
+alias Go='bssh -c "pbrun -uroot -- bash --rcfile /home/users/wei.zhong/.bashrc"'
+
+function _pushSetup() {
+    if [ -z "$1" ]; then
+      >&2 echo "USAGE: pushSetup <bssh-host>"
+      return
+    fi
+
+    cd /Users/wei.zhong/Projects/ais-scripts
+    git pull --quiet origin master
+
+    bscp /Users/wei.zhong/Projects/ais-scripts/troubleshooting/env $1:env
+    bssh -c "grep -q '<user>' .bashrc || echo 'source /home/users/<user>/env' >> /home/users/<user>/.bashrc" $1
+}
+
+# source /usr/local/Homebrew/Library/Taps/now/homebrew-devtools/etc/zshrc
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/wei.zhong/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+# Added by Windsurf
+export PATH="/Users/wei.zhong/.codeium/windsurf/bin:$PATH"
+export PATH="/private/var/projects/snc-provision/snc-provision-docker/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/wei.zhong/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
+export PATH="/Users/wei.zhong/Projects/snc-provision/snc-provision-docker/bin:$PATH"
