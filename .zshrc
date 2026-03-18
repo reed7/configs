@@ -11,8 +11,8 @@ export PATH="/Users/wei.zhong/.local/bin:$PATH"
 #export NEXUS_USERNAME=REDACTED
 #export NEXUS_PASSWORD=REDACTED
 
-export NEXUS_USERNAME=wei.zhong
-export NEXUS_PASSWORD=REDACTED
+export NEXUS_USERNAME=xxxxx
+export NEXUS_PASSWORD=xxxxx
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
