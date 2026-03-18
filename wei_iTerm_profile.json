@@ -418,7 +418,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.84313726425170898
   },
-  "Use Non-ASCII Font" : true,
+  "Use Non-ASCII Font" : false,
   "Badge Color (Light)" : {
     "Red Component" : 0.74613857269287109,
     "Color Space" : "sRGB",
@@ -455,7 +455,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.78105825185775757
   },
-  "Non Ascii Font" : "ProFontForPowerline 18",
+  "Non Ascii Font" : "Menlo-Regular 14",
   "Ansi 6 Color (Dark)" : {
     "Red Component" : 0,
     "Color Space" : "sRGB",
