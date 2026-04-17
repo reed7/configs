@@ -33,21 +33,6 @@ ZSH_THEME="muse"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-export PATH="/usr/local/bin:$PATH"
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-export JAVA_HOME=/opt/homebrew/opt/openjdk@21
-
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/wei.zhong/.oh-my-zsh"
-
-export PATH="/Users/wei.zhong/.local/bin:$PATH"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="muse"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,8 +55,7 @@ ZSH_THEME="muse"
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-"~/.zshrc" 115L, 4064B
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+plugins=(git)
 alias work="cd ~/Projects"
 alias nproc="sysctl -n hw.ncpu"
 
@@ -94,15 +78,7 @@ function _pushSetup() {
     bssh -c "grep -q '<user>' .bashrc || echo 'source /home/users/<user>/env' >> /home/users/<user>/.bashrc" $1
 }
 
-# source /usr/local/Homebrew/Library/Taps/now/homebrew-devtools/etc/zshrc
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/wei.zhong/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-
-# Added by Windsurf
-export PATH="/Users/wei.zhong/.codeium/windsurf/bin:$PATH"
-export PATH="/private/var/projects/snc-provision/snc-provision-docker/bin:$PATH"
+source /Users/wei.zhong/.oh-my-zsh/oh-my-zsh.sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -114,3 +90,5 @@ compinit
 # End of Docker CLI completions
 
 export PATH="/Users/wei.zhong/Projects/snc-provision/snc-provision-docker/bin:$PATH"
+
+export PATH="/Users/wei.zhong/Projects/snc-provision-docker/bin:$PATH"
